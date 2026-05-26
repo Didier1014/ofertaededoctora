@@ -45,10 +45,6 @@ export function HomePage() {
 
         <WistiaVideoPlayer />
 
-        <p className="text-center text-secondary font-bold text-lg mb-8">
-          7 dias de garantia, ou devolvemos o teu dinheiro
-        </p>
-
         {showButton && (
           <a
             href={checkoutUrl}
