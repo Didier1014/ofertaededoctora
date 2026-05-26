@@ -58,14 +58,6 @@ export function HomePage() {
           </a>
         )}
 
-        <p className="text-center text-muted-foreground text-xs mb-4 px-4">
-          Ao clicar em alguma das opções, você concorda com os{" "}
-          <a href="#" className="underline">Termos de utilização e serviço</a>,{" "}
-          <a href="#" className="underline">Política de privacidade</a>,{" "}
-          <a href="#" className="underline">Política de subscrição</a> e{" "}
-          <a href="#" className="underline">Política de cookies</a>.
-        </p>
-
         <TestimonialCarousel />
       </div>
     </main>
