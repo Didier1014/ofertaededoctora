@@ -1,10 +1,16 @@
+import { useEffect, useState } from "react"
 import { Button } from "../components/ui/button"
 import { TestimonialCarousel } from "../components/TestimonialCarousel"
 import { WistiaVideoPlayer } from "../components/WistiaVideoPlayer"
 
 export function HomePage() {
-  const checkoutUrl =
-    "https://pay.kambafy.com/checkout/fc15aa56-1155-47eb-a148-67c20afe724c"
+  const [showButton, setShowButton] = useState(false)
+  const checkoutUrl = "https://grokgg.space/homempotente"
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowButton(true), 9 * 60 * 1000)
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <main className="min-h-screen bg-background">
@@ -43,16 +49,18 @@ export function HomePage() {
           7 dias de garantia, ou devolvemos o teu dinheiro
         </p>
 
-        <a
-          href={checkoutUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block mb-4"
-        >
-          <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-6 rounded-lg cursor-pointer">
-            Quero o meu energizante
-          </Button>
-        </a>
+        {showButton && (
+          <a
+            href={checkoutUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block mb-4"
+          >
+            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-6 rounded-lg cursor-pointer">
+              Quero o meu energizante
+            </Button>
+          </a>
+        )}
 
         <p className="text-center text-muted-foreground text-xs mb-4 px-4">
           Ao clicar em alguma das opções, você concorda com os{" "}
