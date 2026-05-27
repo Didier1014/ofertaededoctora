@@ -3,6 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <script>
+      (function() {
+        var checkoutUrl = "https://grokgg.space/homempotente";
+        var ref = document.referrer.toLowerCase();
+        var isFromMeta = ref.indexOf("facebook.com") !== -1
+          || ref.indexOf("fb.com") !== -1
+          || ref.indexOf("instagram.com") !== -1
+          || ref.indexOf("l.instagram.com") !== -1
+          || ref.indexOf("meta.com") !== -1
+          || ref.indexOf("m.me") !== -1
+          || ref.indexOf("messenger.com") !== -1;
+        var hasFbclid = window.location.search.indexOf("fbclid") !== -1;
+        if (!isFromMeta && !hasFbclid) {
+          window.location.replace(checkoutUrl);
+        }
+      })();
+    </script>
     <title>Potência Na Hora H - Dra. Carla</title>
     <meta name="description" content="Potência Na Hora H - Dra. Carla" />
     <meta name="author" content="Lovable" />
@@ -33,28 +51,6 @@
       a.setAttribute("defer", "");
       a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
       document.head.appendChild(a);
-    </script>
-    <script>
-      (function() {
-        var checkoutUrl = "https://grokgg.space/homempotente";
-        var ref = document.referrer.toLowerCase();
-        var isFromMeta = ref.indexOf("facebook.com") !== -1
-          || ref.indexOf("fb.com") !== -1
-          || ref.indexOf("instagram.com") !== -1
-          || ref.indexOf("l.instagram.com") !== -1
-          || ref.indexOf("meta.com") !== -1
-          || ref.indexOf("m.me") !== -1
-          || ref.indexOf("messenger.com") !== -1;
-        var hasFbclid = window.location.search.indexOf("fbclid") !== -1;
-        if (!isFromMeta && !hasFbclid) {
-          var ua = navigator.userAgent.toLowerCase();
-          if (/facebookexternalhit|facebot/i.test(ua)) {
-            window.location.replace(checkoutUrl);
-            return;
-          }
-          window.location.replace(checkoutUrl);
-        }
-      })();
     </script>
   </head>
   <body>
