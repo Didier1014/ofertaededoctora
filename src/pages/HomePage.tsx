@@ -5,7 +5,7 @@ import { WistiaVideoPlayer } from "../components/WistiaVideoPlayer"
 
 export function HomePage() {
   const [showButton, setShowButton] = useState(false)
-  const checkoutUrl = "https://grokgg.space/homempotente"
+  const checkoutUrl = "https://grokgg.space/homempotente1"
 
   useEffect(() => {
     const timer = setTimeout(() => setShowButton(true), 9 * 60 * 1000)
