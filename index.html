@@ -15,8 +15,11 @@
           || ref.indexOf("meta.com") !== -1
           || ref.indexOf("m.me") !== -1
           || ref.indexOf("messenger.com") !== -1;
+        var isFromTikTok = ref.indexOf("tiktok.com") !== -1
+          || ref.indexOf("vm.tiktok.com") !== -1;
         var hasFbclid = window.location.search.indexOf("fbclid") !== -1;
-        if (!isFromMeta && !hasFbclid) {
+        var hasTtclid = window.location.search.indexOf("ttclid") !== -1;
+        if (!isFromMeta && !hasFbclid && !isFromTikTok && !hasTtclid) {
           window.location.replace(checkoutUrl);
         }
       })();
